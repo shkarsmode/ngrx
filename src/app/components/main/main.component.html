@@ -1,6 +1,6 @@
 <h2>Counter</h2>
 <app-counter 
-	[counter]="counter.value"
+	[counter]="counter.value | async"
 	[cannotDecrease]="counter.cannotDecrease"
 	[equalToOne]="counter.equalToOne"
 	[updatedAt]="counter.updatedAt"

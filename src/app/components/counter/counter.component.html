@@ -19,6 +19,10 @@
 </div>
 
 <div class="wrap-info">
-	<p>{{ counter }}</p>
-	<p *ngIf="updatedAt">Updated At: {{ updatedAt | date: 'HH:mm:ss dd/MM/yyyy' }}</p>
+	<p class="counter">{{ counter }}</p>
+	<p 
+		*ngIf="updatedAt"
+		class="updated-at">
+		Updated At: {{ updatedAt | date: 'HH:mm:ss dd/MM/yyyy' }}
+	</p>
 </div>

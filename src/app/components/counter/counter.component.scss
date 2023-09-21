@@ -20,11 +20,11 @@
 	font-weight: 600;
 
 	p {
-		&:first-child {
+		&.counter {
 			user-select: none;
 		}
 
-		&:last-child {
+		&.updated-at {
 			font-size: 20px;
 		}
 	}
