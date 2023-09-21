@@ -1,0 +1,8 @@
+<h2>Counter</h2>
+<app-counter 
+	[counter]="counter.value"
+	[cannotDecrease]="counter.cannotDecrease"
+	[equalToOne]="counter.equalToOne"
+	[updatedAt]="counter.updatedAt"
+	(count)="countWithSpecifyMethod($event)">
+</app-counter>

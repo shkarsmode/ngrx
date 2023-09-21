@@ -1,0 +1,24 @@
+<div class="wrap-buttons">
+	<button
+		(click)="countWithSpecifyMethod(CountMethod.Addition)"
+		mat-raised-button>
+		+1
+	</button>
+	<button
+		[disabled]="cannotDecrease"
+		(click)="countWithSpecifyMethod(CountMethod.Subtraction)"
+		mat-raised-button>
+		-1
+	</button>
+	<button
+		[disabled]="equalToOne"
+		(click)="countWithSpecifyMethod(CountMethod.EqualToOne)"
+		mat-raised-button>
+		=1
+	</button>
+</div>
+
+<div class="wrap-info">
+	<p>{{ counter }}</p>
+	<p *ngIf="updatedAt">Updated At: {{ updatedAt | date: 'HH:mm:ss dd/MM/yyyy' }}</p>
+</div>

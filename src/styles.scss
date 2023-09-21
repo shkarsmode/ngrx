@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'global-variables.scss';
+@import 'reset-styles.scss';
+
+
+html, body { height: 100%; }
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: $background-color;
+	color: $text-color;
+	margin: 0;
+
+}
+
+button.mat-mdc-raised-button:not(:disabled) {
+	background-color: $dark-color;
+	transition: background-color .3s;
+
+	font-weight: 600;
+	font-size: 18px;
+
+	&:hover {
+		background-color: rgba($light-color, 0.8)
+	}
+}
