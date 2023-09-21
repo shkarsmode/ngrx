@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { clear, countSelector, decrease, increase, updatedAtSelector } from 'src/app/reducers/counter';
 import { CountMethodEnum } from 'src/app/shared/enums/CountMethodEnum';
 @Component({
@@ -61,7 +61,7 @@ class Counter {
     }
 
     public get value$(): Observable<number> {
-        return this._counter$;
+        return this._counter$.pipe(tap(count => this.counter = count));
     }
 
     public get updatedAt$(): Observable<number | undefined> {
