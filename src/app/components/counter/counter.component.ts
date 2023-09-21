@@ -13,7 +13,7 @@ export class CounterComponent {
     @Output() count: EventEmitter<CountMethodEnum> = new EventEmitter();
     
     @Input() counter: number | null = 0;
-    @Input() updatedAt: number = 0;
+    @Input() updatedAt: number | null | undefined = 0;
     @Input() cannotDecrease: boolean = true;
     @Input() equalToOne: boolean = true;
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, tap } from 'rxjs';
-import { clear, countSelector, decrease, increase } from 'src/app/reducers/counter';
+import { Observable } from 'rxjs';
+import { clear, countSelector, decrease, increase, updatedAtSelector } from 'src/app/reducers/counter';
 import { CountMethodEnum } from 'src/app/shared/enums/CountMethodEnum';
 @Component({
     selector: 'app-main',
@@ -12,9 +12,7 @@ export class MainComponent {
     
     public counter: Counter = new Counter(0, this.store);
     
-    constructor(
-        private store: Store
-    ) {}
+    constructor(private store: Store) {}
 
     public countWithSpecifyMethod(method: CountMethodEnum): void {
         this.counter.countWithSpecifyMethod(method);
@@ -23,11 +21,15 @@ export class MainComponent {
 }
 
 class Counter {
-    public updatedAt: number;
-    public counter$: Observable<number> = this.store.select(countSelector);
+    private _counter$: Observable<number> = this.store.select(countSelector);
+    private _updatedAt$: Observable<number | undefined> = this.store.select(updatedAtSelector);
 
+    /**
+    * @param {number} counter - Initial value of counter.
+    * @param {Store} store - NgRx store
+    */
     constructor(
-        private counter: number = 0,
+        private counter: number,
         private store: Store
     ) {}
 
@@ -35,35 +37,35 @@ class Counter {
         switch(method) {
             case CountMethodEnum.Addition: {
                 this.counter++;
-                this.store.dispatch(increase());
-                this.updateTimestamp(); 
+                const counter = { count: this.counter }; 
+                this.store.dispatch(increase(counter));
                 break;
             }
             case CountMethodEnum.Subtraction: {
                 if (this.cannotDecrease) return;
 
                 this.counter--;
-                this.store.dispatch(decrease());
-                this.updateTimestamp();
+                const counter = { count: this.counter }; 
+                this.store.dispatch(decrease(counter));
                 break;
             }
             case CountMethodEnum.EqualToOne: {
                 if (this.equalToOne) return;
 
                 this.counter = 1;
-                this.store.dispatch(clear());
-                this.updateTimestamp();
+                const counter = { count: this.counter }; 
+                this.store.dispatch(clear(counter));
                 break;
             }
         }
     }
 
-    private updateTimestamp(): void {
-        this.updatedAt = Date.now();
+    public get value$(): Observable<number> {
+        return this._counter$;
     }
 
-    public get value(): Observable<number> {
-        return this.counter$.pipe(tap(counter => this.counter = counter));
+    public get updatedAt$(): Observable<number | undefined> {
+        return this._updatedAt$;
     }
 
     public get cannotDecrease(): boolean {
