@@ -34,85 +34,11 @@ li {
 	margin-bottom: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
-	span {
-		color: #fff;
-	}
-
-	div {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		user-select: none;
-
-		&.wrap-left-side {
-			justify-content: space-between;
-		}
-
-		&.wrap-right-side {
-			width: auto;
-			justify-content: flex-end;
-
-			.span-button:first-child {
-				margin-right: 20px;
-			}
-		}
-	}
-
-	&.completed {
-		opacity: 0.5;
-		.text {
-			text-decoration: line-through;
-		}
-	}
+	
 }
 
 
-.checkbox {
-	margin-right: 15px;
-	cursor: pointer;
-}
 
-.span-button {
-	cursor: pointer;
-}
-
-
-.delete-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 3px;
-	border-radius: 80px;
-}
-
-.delete-button:hover {
-	outline: none;
-	background-color: #555;
-}
-
-.text {
-	font-size: 16px;
-}
-
-.date {
-	width: 300px;
-}
-
-.span-button {
-	display: block;
-	padding: 5px;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	font-size: 18px;
-}
-
-.span-button:hover {
-	background-color: rgb(52, 53, 53);
-	border-radius: 80px;
-	/* padding: 4px 6px; */
-	color: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
 
 .wrap-not-found {
 	display: flex;

@@ -6,7 +6,12 @@
 		*ngFor="let todo of todoList; trackBy: todosTrackBy"
 		[class.completed]="todo.completed"
 		cdkDrag>
-		<div class="wrap-left-side">
+		<!-- <app-todo-list-item-ui
+			(changeState)="onChangeStateTodo($event)"
+			(delete)="onDeleteTodo($event)" 
+			[todo]="todo">
+		</app-todo-list-item-ui> -->
+		<!-- <div class="wrap-left-side">
 			<div>
 				<span 
 					*ngIf="!todo.completed; else completed" 
@@ -40,7 +45,7 @@
 					drag_indicator
 				</span>
 			</span>
-		</div>
+		</div> -->
 	</li>
 </ul>
 

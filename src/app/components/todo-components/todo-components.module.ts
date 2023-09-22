@@ -6,12 +6,14 @@ import { StoreTodoModule } from 'src/app/shared/store/todo/store-todo.module';
 import { TodoCreateFormUiComponent } from './ui/todo-create-form-ui/todo-create-form-ui.component';
 import { TodoListUiComponent } from './ui/todo-list-ui/todo-list-ui.component';
 import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component';
+import { TodoListItemUiComponent } from './ui/todo-list-item-ui/todo-list-item-ui.component';
 
 @NgModule({
     declarations: [
         TodoWidgetComponent,
         TodoCreateFormUiComponent,
-        TodoListUiComponent
+        TodoListUiComponent,
+        TodoListItemUiComponent
     ],
     imports: [
         CommonModule,
