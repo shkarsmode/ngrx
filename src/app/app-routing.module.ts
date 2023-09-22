@@ -6,6 +6,14 @@ const routes: Routes = [
         path: '', 
         loadChildren: () => 
             import('./layouts/main-layout/main-layout.module').then(m => m.MainLayoutModule)
+    },
+    {
+        path: 'todo', 
+        loadChildren: () => 
+            import('./layouts/todo-layout/todo-layout.module').then(m => m.TodoLayoutModule)
+    },
+    {
+        path: '**', redirectTo: 'todo'
     }
 ];
 
