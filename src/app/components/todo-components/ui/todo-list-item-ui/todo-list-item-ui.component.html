@@ -1,0 +1,26 @@
+<div class="wrap-left-side">
+	<div>
+		<span
+			(click)="onChangeStateTodo(todo.id)"
+			class="material-symbols-outlined checkbox">
+			{{ checkBoxState }}
+		</span>
+		<span class="text">
+			{{ todo.name }}
+		</span>
+	</div>
+	<span class="date">
+		{{ todo.updatedAt | date: 'HH:mm:ss dd/MM/YYYY' }}
+	</span>
+</div>
+
+<div class="wrap-right-side">
+	<span 
+		(click)="onDeleteTodo(todo.id)"	
+		class="span-button">
+		<span class="material-symbols-outlined">
+			delete
+		</span>
+	</span>
+	<ng-content selector="span-button"></ng-content>
+</div>

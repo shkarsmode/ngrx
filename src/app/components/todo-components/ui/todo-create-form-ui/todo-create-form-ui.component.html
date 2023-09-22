@@ -1,22 +1,15 @@
-
-<form class="input-section" (ngSubmit)="onCreateTodo()">
+<form 
+	(ngSubmit)="onCreateTodo()"
+	class="input-section">
 	<input
 		[(ngModel)]="todo"
-		name="todo"
-		id="todoInput" 
+		name="todo" 
 		type="text" 
-		placeholder="Add item..." />
+		placeholder="Bulk up..." />
 	<button
-		[disabled]="isDisableCreateButton" 
+		[disabled]="isDisableCreateButton"
 		mat-raised-button 
-		id="addBtn" 
-		type="submit" 
-		class="add">
+		type="submit">
 		Add
 	</button>
-	<!-- <button type="button" class="add" id="update-button" style="display: none">
-		Update
-	</button> -->
-	<!-- <input type="text" id="search-input" placeholder="Search" />
-	<button type="submit" id="search-button">Search</button> -->
 </form>

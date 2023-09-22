@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { TODO_RECUDER_NODE, todoReducer } from './todo.reducer';
+import { TODO_REDUCER_NODE, todoReducer } from './todo.reducer';
 
 @NgModule({
-    declarations: [],
     imports: [
-        StoreModule.forFeature(TODO_RECUDER_NODE, todoReducer)
+        StoreModule.forFeature(TODO_REDUCER_NODE, todoReducer)
     ]
 })
 export class StoreTodoModule {}

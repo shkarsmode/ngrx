@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
 import { CountMethodEnum } from 'src/app/shared/enums/CountMethodEnum';
-import { clear, countSelector, decrease, increase, updatedAtSelector } from 'src/app/shared/store/counter/counter';
+import { clear, decrease, increase, } from 'src/app/shared/store/counter/counter.actions';
+import { CounterState } from 'src/app/shared/store/counter/counter.reducer';
+import { countSelector, updatedAtSelector } from 'src/app/shared/store/counter/counter.selectors';
 @Component({
     selector: 'app-main',
     templateUrl: './main.component.html',
@@ -10,13 +12,13 @@ import { clear, countSelector, decrease, increase, updatedAtSelector } from 'src
 })
 export class MainComponent {
     
-    // public counter: Counter = new Counter(0, this.store);
+    public counter: Counter = new Counter(0, this.store);
     
-    // constructor(private store: Store) {}
+    constructor(private store: Store<CounterState>) {}
 
-    // public countWithSpecifyMethod(method: CountMethodEnum): void {
-    //     this.counter.countWithSpecifyMethod(method);
-    // }
+    public countWithSpecifyMethod(method: CountMethodEnum): void {
+        this.counter.countWithSpecifyMethod(method);
+    }
 
 }
 
@@ -31,7 +33,7 @@ class Counter {
     */
     constructor(
         private counter: number,
-        private store: Store
+        private store: Store<CounterState>
     ) {}
 
     public countWithSpecifyMethod(method: CountMethodEnum): void {

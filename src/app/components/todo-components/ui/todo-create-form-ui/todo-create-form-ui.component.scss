@@ -3,7 +3,6 @@
 :host {
 	width: 800px;
 	display: block;
-	// border-radius: 15px;
 	margin-top: 50px;
 }
 
@@ -17,49 +16,51 @@
 .input-section input[type="text"] {
 	flex-grow: 1;
 	padding: 20px;
-	border: none;
+	
 	background-color: $box-color;
 	color: $text-color;
 	font-size: 16px;
+
+	border: none;
 	border-radius: 30px;
+
 	transition: background-color 0.3s ease;
 	box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
 }
 
-.input-section input[type="text"]::placeholder {
-	color: #ddd;
-}
+.input-section input[type="text"] {
+	&::placeholder {
+		color: $placeholder-color;
+	}
 
-.input-section input[type="text"]:focus {
-	outline: none;
-	background-color: $box-color-hover;
-}
-
-.input-section button {
-	margin-left: 10px;
-	padding: 16px 23px;
-	border: none;
-	background-color: $box-color;
-	color: #ffffff;
-	font-size: 16px;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s;
-	box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
-
-	&:disabled {
-		opacity: 0.5;
-		&:hover {
-			background-color: $box-color;
-		}
+	&:focus {
+		outline: none;
+		background-color: $box-color-hover;
 	}
 }
 
-.input-section button:hover {
-	outline: none;
-	background-color: $box-color-hover;
-}
+button {
+	margin-left: 10px;
+	padding: 16px 23px;
 
-.add {
-	margin-right: 10px;
+	background-color: $box-color;
+	color: $text-color;
+	font-size: 16px;
+
+	border: none;
+	border-radius: 5px;
+	
+	box-shadow: 9px 21px 30px -19px rgba(0, 0, 0, 0.63);
+	transition: all 0.3s;
+
+	cursor: pointer;
+
+	:hover {
+		outline: none;
+		background-color: $box-color-hover;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
 }

@@ -7,13 +7,15 @@ import { TodoCreateFormUiComponent } from './ui/todo-create-form-ui/todo-create-
 import { TodoListUiComponent } from './ui/todo-list-ui/todo-list-ui.component';
 import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component';
 import { TodoListItemUiComponent } from './ui/todo-list-item-ui/todo-list-item-ui.component';
+import { TodoListNotFoundComponent } from './ui/todo-list-not-found/todo-list-not-found.component';
 
 @NgModule({
     declarations: [
         TodoWidgetComponent,
         TodoCreateFormUiComponent,
         TodoListUiComponent,
-        TodoListItemUiComponent
+        TodoListItemUiComponent,
+        TodoListNotFoundComponent
     ],
     imports: [
         CommonModule,

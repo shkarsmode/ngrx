@@ -1,59 +1,26 @@
 <ul 
+	(cdkDropListDropped)="onTodoDropped($event)"
 	class="todo-list"
-	(cdkDropListDropped)="onTodoDropped($event)" 
 	cdkDropList>
 	<li 
 		*ngFor="let todo of todoList; trackBy: todosTrackBy"
 		[class.completed]="todo.completed"
 		cdkDrag>
-		<!-- <app-todo-list-item-ui
+		<app-todo-list-item-ui
 			(changeState)="onChangeStateTodo($event)"
 			(delete)="onDeleteTodo($event)" 
 			[todo]="todo">
-		</app-todo-list-item-ui> -->
-		<!-- <div class="wrap-left-side">
-			<div>
-				<span 
-					*ngIf="!todo.completed; else completed" 
-					(click)="onChangeStateTodo(todo.id)"
-					class="material-symbols-outlined checkbox">
-					check_box_outline_blank
-				</span>
-				<ng-template #completed>
-					<span 
-						(click)="onChangeStateTodo(todo.id)" 
-						class="material-symbols-outlined checkbox">
-						check_box
-					</span>
-				</ng-template>
-				<span class="text">{{ todo.name }}</span>
-			</div>
-			<span class="date">{{ todo.updatedAt | date: 'HH:mm:ss dd/MM/YYYY' }}</span>
-		</div>
-		<div class="wrap-right-side">
-			<span 
-				(click)="onDeleteTodo(todo.id)"	
-				class="span-button" >
-				<span class="material-symbols-outlined">
-					delete
-				</span>
-			</span>
-			<span 
-				cdkDragHandle	
-				class="span-button">
+			<span
+				class="span-button"
+				cdkDragHandle>
 				<span class="material-symbols-outlined">
 					drag_indicator
 				</span>
 			</span>
-		</div> -->
+		</app-todo-list-item-ui>
 	</li>
 </ul>
 
-<div 
-	*ngIf="!todoList?.length"	
-	class="wrap-not-found">
-	<span class="material-symbols-outlined">
-		error
-	</span>
-	<h1 class="not-found">NOT FOUND</h1>
-</div>
+<app-todo-list-not-found 
+	*ngIf="!todoList?.length">
+</app-todo-list-not-found>

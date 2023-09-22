@@ -13,7 +13,6 @@ body {
 	* {
 		font-family: 'Montserrat', sans-serif;
 	}
-
 }
 
 button.mat-mdc-raised-button:not(:disabled) {
@@ -27,6 +26,3 @@ button.mat-mdc-raised-button:not(:disabled) {
 		background-color: rgba($light-color, 0.8)
 	}
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

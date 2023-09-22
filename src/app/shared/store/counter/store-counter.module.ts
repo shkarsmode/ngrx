@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { } from './counter.actions';
+import { COUNTER_REDUCER_NODE, counterReducer } from './counter.reducer';
 
 @NgModule({
-    declarations: [],
     imports: [
-        // StoreModule.forFeature(reducers, {
-        //     metaReducers
-        // }),
-        // EffectsModule.forFeature([EffectsService]),
-    ],
-    exports: [
-        // StoreModule,
-        // EffectsModule
+        StoreModule.forFeature(COUNTER_REDUCER_NODE, counterReducer)
     ]
 })
 export class StoreCounterModule {}

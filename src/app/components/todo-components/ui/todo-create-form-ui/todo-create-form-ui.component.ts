@@ -16,6 +16,7 @@ export class TodoCreateFormUiComponent {
         this.todo = '';
     }
 
+
     public get isDisableCreateButton(): boolean {
         if (!this.todo || this.todo.length < 2) return true;
         return false;

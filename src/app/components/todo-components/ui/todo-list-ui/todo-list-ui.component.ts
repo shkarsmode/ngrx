@@ -14,20 +14,10 @@ export class TodoListUiComponent {
     @Output() changeState: EventEmitter<number> = new EventEmitter();
     @Output() dragAndDropEvent: EventEmitter<CdkDragDrop<any[]>> = new EventEmitter();
 
-    public onDeleteTodo(id: number): void {
-        this.delete.emit(id);
-    }
-
-    public onChangeStateTodo(id: number): void {
-        this.changeState.emit(id);
-    }
-
-    public onTodoDropped(event: CdkDragDrop<any[]>) {
-        if (!this.todoList) return;
-        this.dragAndDropEvent.emit(event);
-    }
-
-    public todosTrackBy(_: number, todo: ITodo): number {
-        return todo.id;
-    }
+    public onDeleteTodo = (id: number) => this.delete.emit(id);
+    public onChangeStateTodo = (id: number) => this.changeState.emit(id);
+    public onTodoDropped = (event: CdkDragDrop<any[]>) => this.dragAndDropEvent.emit(event);
+    
+    public todosTrackBy = (_: number, todo: ITodo): number => todo.id;
+    
 }
