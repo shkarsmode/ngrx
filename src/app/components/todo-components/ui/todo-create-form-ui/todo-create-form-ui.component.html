@@ -1,0 +1,22 @@
+
+<form class="input-section" (ngSubmit)="onCreateTodo()">
+	<input
+		[(ngModel)]="todo"
+		name="todo"
+		id="todoInput" 
+		type="text" 
+		placeholder="Add item..." />
+	<button
+		[disabled]="isDisableCreateButton" 
+		mat-raised-button 
+		id="addBtn" 
+		type="submit" 
+		class="add">
+		Add
+	</button>
+	<!-- <button type="button" class="add" id="update-button" style="display: none">
+		Update
+	</button> -->
+	<!-- <input type="text" id="search-input" placeholder="Search" />
+	<button type="submit" id="search-button">Search</button> -->
+</form>

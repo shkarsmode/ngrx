@@ -5,16 +5,13 @@ import { MainComponentsModule } from 'src/app/components/main-components/main-co
 import { MainLayoutRoutingModule } from './main-layout-routing.module';
 import { MainLayoutComponent } from './main-layout.component';
 
-
-
 @NgModule({
-  declarations: [
-    MainLayoutComponent
-  ],
-  imports: [
-    CommonModule,
-    MainLayoutRoutingModule,
-    MainComponentsModule
-  ]
+    declarations: [MainLayoutComponent],
+    imports: [
+        CommonModule,
+        MainLayoutRoutingModule,
+        MainComponentsModule,
+        // StoreCounterModule,
+    ],
 })
-export class MainLayoutModule { }
+export class MainLayoutModule {}

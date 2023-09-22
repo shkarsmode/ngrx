@@ -3,14 +3,14 @@ import {
     ActionReducerMap,
     MetaReducer
 } from '@ngrx/store';
-import { COUNTER_KEY, CounterState, counterReducer } from './counter';
+import { COUNTER_REDUCER_NODE, CounterState, counterReducer } from './counter';
 
 export interface State {
-    [COUNTER_KEY]: CounterState;
+    [COUNTER_REDUCER_NODE]: CounterState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-    [COUNTER_KEY]: counterReducer
+    [COUNTER_REDUCER_NODE]: counterReducer
 };
 
 export const metaReducers: MetaReducer<State>[] = isDevMode() ? [] : [];

@@ -1,13 +1,13 @@
 import {
-	createAction,
-	createFeatureSelector,
-	createReducer,
-	createSelector,
-	on,
-	props,
+    createAction,
+    createFeatureSelector,
+    createReducer,
+    createSelector,
+    on,
+    props,
 } from '@ngrx/store';
 
-export const COUNTER_KEY = 'counter';
+export const COUNTER_REDUCER_NODE = 'counter';
 
 export const increase = createAction(
 	'[COUNTER] increase',
@@ -51,7 +51,7 @@ export const counterReducer = createReducer(
 	}))
 );
 
-export const featureSelector = createFeatureSelector<CounterState>(COUNTER_KEY);
+export const featureSelector = createFeatureSelector<CounterState>(COUNTER_REDUCER_NODE);
 
 export const countSelector = createSelector(
     featureSelector,

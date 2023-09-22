@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map } from 'rxjs/operators';
-import { clear, decrease, increase, updateTimestamp } from 'src/app/reducers/counter';
+import { clear, decrease, increase, updateTimestamp } from 'src/app/shared/store/counter/counter';
 
 @Injectable({
     providedIn: 'root',
